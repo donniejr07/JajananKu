@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JajananKu - Categories</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary-fixed": "#002113",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "secondary-container": "#6cf8bb",
+                        "on-primary-fixed": "#131b2e",
+                        "on-surface-variant": "#45464d",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f6f3f5",
+                        "outline-variant": "#c6c6cd",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-primary-container": "#7c839b",
+                        "secondary": "#006c49",
+                        "on-secondary-container": "#00714d",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-container": "#f0edef",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "inverse-surface": "#303032",
+                        "primary-fixed": "#dae2fd",
+                        "surface-variant": "#e4e2e4",
+                        "error-container": "#ffdad6",
+                        "outline": "#76777d",
+                        "inverse-primary": "#bec6e0",
+                        "tertiary": "#000000",
+                        "surface-bright": "#fcf8fa",
+                        "on-tertiary-container": "#75859d",
+                        "on-surface": "#1b1b1d",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-error": "#ffffff",
+                        "on-background": "#1b1b1d",
+                        "surface-tint": "#565e74",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "inverse-on-surface": "#f3f0f2",
+                        "primary-container": "#131b2e",
+                        "surface": "#fcf8fa",
+                        "tertiary-fixed": "#d3e4fe",
+                        "tertiary-container": "#0b1c30",
+                        "surface-dim": "#dcd9db",
+                        "surface-container-high": "#eae7e9",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "primary": "#000000",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#bec6e0",
+                        "background": "#fcf8fa",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "container-max": "1440px",
+                        "stack-lg": "24px",
+                        "sidebar-width": "280px",
+                        "stack-md": "16px",
+                        "margin-page": "40px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "mono-data": ["JetBrains Mono"],
+                        "display-lg": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "mono-data": ["14px", { "lineHeight": "1.5", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-lg": ["18px", { "lineHeight": "1.5", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F8FAFC; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .glass-card:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+            border-color: #CBD5E1;
+            transform: translateY(-2px);
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- SideNavBar (Shared Component) -->
+<nav class="fixed left-0 top-0 h-screen w-sidebar-width bg-primary-container dark:bg-tertiary-container border-r border-outline-variant dark:border-outline shadow-sm flex flex-col h-full py-margin-page z-50 md:flex hidden">
+<div class="px-stack-lg mb-stack-lg">
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary dark:text-inverse-primary">JajananKu</h1>
+<p class="font-label-md text-label-md text-on-primary-container">Personal Finance</p>
+</div>
+<div class="flex-1 flex flex-col gap-stack-sm overflow-y-auto">
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary-container/70 hover:text-on-primary-container hover:bg-on-primary-fixed-variant/5 transition-colors active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary-container/70 hover:text-on-primary-container hover:bg-on-primary-fixed-variant/5 transition-colors active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-body-md text-body-md">Income</span>
+</a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary-container/70 hover:text-on-primary-container hover:bg-on-primary-fixed-variant/5 transition-colors active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-body-md text-body-md">Expense</span>
+</a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm border-l-4 border-secondary text-secondary-fixed bg-on-primary-fixed-variant/10 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-body-md text-body-md">Categories</span>
+</a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary-container/70 hover:text-on-primary-container hover:bg-on-primary-fixed-variant/5 transition-colors active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-body-md text-body-md">Reports</span>
+</a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary-container/70 hover:text-on-primary-container hover:bg-on-primary-fixed-variant/5 transition-colors active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-body-md text-body-md">Profile</span>
+</a>
+</div>
+<div class="px-stack-lg mt-auto">
+<button class="w-full bg-secondary text-on-secondary py-stack-sm px-stack-md rounded-lg font-body-md text-body-md font-semibold hover:bg-secondary/90 transition-colors">Add Transaction</button>
+</div>
+</nav>
+<!-- TopAppBar (Shared Component) -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-280px)] h-16 bg-surface dark:bg-background border-b border-outline-variant dark:border-outline z-40 flex justify-between items-center px-stack-lg">
+<div class="md:hidden">
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">JajananKu</h1>
+</div>
+<!-- Search (Left on Desktop, Hidden on Mobile for clean nav) -->
+<div class="hidden md:flex items-center relative w-64 focus-within:ring-2 focus-within:ring-secondary rounded-lg">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant pointer-events-none" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-[#F1F5F9] rounded-lg border-none focus:ring-0 font-body-md text-body-md text-on-surface transition-colors focus:bg-surface-container-lowest focus:border-secondary focus:border" placeholder="Search categories..." type="text"/>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-all p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="A small circular profile picture of a professional user, clean lighting, corporate modern aesthetic, white background, high utility minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdBwqZsm5OcVxE6oBBUwBIcs-Sl3ltmeHx4Y9d5Wp10eWcS3afZUq6a21YIMXSpaoUEK-o9KGFe0GI880ifrMzz6UU9597Tq8LKPEy53sWD8xAGcRixyzeIlZSnE44-VwVYALbCia4tJyEJ-f9_QLrkActTQq6g05EPgz7PdAHNZ8NkbFDq1M6NZ7Hp-ywbWHgMFe-o1S_9jE5-LHOgAw5VtDl4TnsSlc50ZObq660v8iacCB623t5YA"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 md:pl-[304px] px-stack-lg pb-margin-page max-w-container-max mx-auto min-h-screen">
+<!-- Page Header & Global Actions -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-stack-lg gap-stack-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Manage Categories</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Organize your income and expenses for better tracking.</p>
+</div>
+<button class="bg-primary text-on-primary py-stack-sm px-stack-lg rounded-lg font-title-lg text-title-lg flex items-center gap-2 hover:bg-primary/90 transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2">
+<span class="material-symbols-outlined" data-icon="add" style="font-variation-settings: 'FILL' 1;">add</span>
+                New Category
+            </button>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg">
+<!-- Expense Categories Section -->
+<section class="glass-card rounded-xl p-stack-md flex flex-col">
+<div class="border-b border-outline-variant pb-stack-sm mb-stack-md flex justify-between items-center">
+<h3 class="font-title-lg text-title-lg text-primary flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error inline-block"></span>
+                        Expense Categories
+                    </h3>
+<span class="font-label-md text-label-md text-on-surface-variant bg-surface-container-low px-2 py-1 rounded">12 Items</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-stack-sm auto-rows-max">
+<!-- Category Item -->
+<div class="group relative flex items-center gap-stack-sm p-stack-sm border border-outline-variant rounded-lg bg-surface-container-lowest hover:border-secondary-container transition-colors cursor-pointer">
+<div class="w-10 h-10 rounded bg-[#FEE2E2] flex items-center justify-center text-error flex-shrink-0">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-body-md text-body-md font-semibold text-primary truncate">Food &amp; Dining</h4>
+<p class="font-label-md text-label-md text-on-surface-variant truncate">Daily meals, groceries</p>
+</div>
+<div class="opacity-0 group-hover:opacity-100 flex gap-1 transition-opacity absolute right-2 bg-surface-container-lowest px-1">
+<button class="text-on-surface-variant hover:text-secondary p-1" title="Edit"><span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span></button>
+<button class="text-on-surface-variant hover:text-error p-1" title="Delete"><span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span></button>
+</div>
+</div>
+<!-- Category Item -->
+<div class="group relative flex items-center gap-stack-sm p-stack-sm border border-outline-variant rounded-lg bg-surface-container-lowest hover:border-secondary-container transition-colors cursor-pointer">
+<div class="w-10 h-10 rounded bg-[#E0E7FF] flex items-center justify-center text-[#4338CA] flex-shrink-0">
+<span class="material-symbols-outlined" data-icon="directions_car">directions_car</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-body-md text-body-md font-semibold text-primary truncate">Transportation</h4>
+<p class="font-label-md text-label-md text-on-surface-variant truncate">Gas, transit, repairs</p>
+</div>
+<div class="opacity-0 group-hover:opacity-100 flex gap-1 transition-opacity absolute right-2 bg-surface-container-lowest px-1">
+<button class="text-on-surface-variant hover:text-secondary p-1" title="Edit"><span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span></button>
+<button class="text-on-surface-variant hover:text-error p-1" title="Delete"><span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span></button>
+</div>
+</div>
+<!-- Category Item -->
+<div class="group relative flex items-center gap-stack-sm p-stack-sm border border-outline-variant rounded-lg bg-surface-container-lowest hover:border-secondary-container transition-colors cursor-pointer">
+<div class="w-10 h-10 rounded bg-[#FEF3C7] flex items-center justify-center text-[#B45309] flex-shrink-0">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-body-md text-body-md font-semibold text-primary truncate">Housing</h4>
+<p class="font-label-md text-label-md text-on-surface-variant truncate">Rent, utilities</p>
+</div>
+<div class="opacity-0 group-hover:opacity-100 flex gap-1 transition-opacity absolute right-2 bg-surface-container-lowest px-1">
+<button class="text-on-surface-variant hover:text-secondary p-1" title="Edit"><span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span></button>
+<button class="text-on-surface-variant hover:text-error p-1" title="Delete"><span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span></button>
+</div>
+</div>
+</div>
+</section>
+<!-- Income Categories Section -->
+<section class="glass-card rounded-xl p-stack-md flex flex-col">
+<div class="border-b border-outline-variant pb-stack-sm mb-stack-md flex justify-between items-center">
+<h3 class="font-title-lg text-title-lg text-primary flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary-container inline-block"></span>
+                        Income Categories
+                    </h3>
+<span class="font-label-md text-label-md text-on-surface-variant bg-surface-container-low px-2 py-1 rounded">4 Items</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-stack-sm auto-rows-max">
+<!-- Category Item -->
+<div class="group relative flex items-center gap-stack-sm p-stack-sm border border-outline-variant rounded-lg bg-surface-container-lowest hover:border-secondary-container transition-colors cursor-pointer">
+<div class="w-10 h-10 rounded bg-[#D1FAE5] flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-body-md text-body-md font-semibold text-primary truncate">Salary</h4>
+<p class="font-label-md text-label-md text-on-surface-variant truncate">Primary job income</p>
+</div>
+<div class="opacity-0 group-hover:opacity-100 flex gap-1 transition-opacity absolute right-2 bg-surface-container-lowest px-1">
+<button class="text-on-surface-variant hover:text-secondary p-1" title="Edit"><span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span></button>
+<button class="text-on-surface-variant hover:text-error p-1" title="Delete"><span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span></button>
+</div>
+</div>
+<!-- Category Item -->
+<div class="group relative flex items-center gap-stack-sm p-stack-sm border border-outline-variant rounded-lg bg-surface-container-lowest hover:border-secondary-container transition-colors cursor-pointer">
+<div class="w-10 h-10 rounded bg-[#E0E7FF] flex items-center justify-center text-[#4338CA] flex-shrink-0">
+<span class="material-symbols-outlined" data-icon="laptop_mac">laptop_mac</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-body-md text-body-md font-semibold text-primary truncate">Freelance</h4>
+<p class="font-label-md text-label-md text-on-surface-variant truncate">Side projects</p>
+</div>
+<div class="opacity-0 group-hover:opacity-100 flex gap-1 transition-opacity absolute right-2 bg-surface-container-lowest px-1">
+<button class="text-on-surface-variant hover:text-secondary p-1" title="Edit"><span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span></button>
+<button class="text-on-surface-variant hover:text-error p-1" title="Delete"><span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span></button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

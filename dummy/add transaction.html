@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JajananKu - Add Transaction</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary-fixed": "#002113",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "secondary-container": "#6cf8bb",
+                        "on-primary-fixed": "#131b2e",
+                        "on-surface-variant": "#45464d",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f6f3f5",
+                        "outline-variant": "#c6c6cd",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-primary-container": "#7c839b",
+                        "secondary": "#006c49",
+                        "on-secondary-container": "#00714d",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-container": "#f0edef",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "inverse-surface": "#303032",
+                        "primary-fixed": "#dae2fd",
+                        "surface-variant": "#e4e2e4",
+                        "error-container": "#ffdad6",
+                        "outline": "#76777d",
+                        "inverse-primary": "#bec6e0",
+                        "tertiary": "#000000",
+                        "surface-bright": "#fcf8fa",
+                        "on-tertiary-container": "#75859d",
+                        "on-surface": "#1b1b1d",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-error": "#ffffff",
+                        "on-background": "#1b1b1d",
+                        "surface-tint": "#565e74",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "inverse-on-surface": "#f3f0f2",
+                        "primary-container": "#131b2e",
+                        "surface": "#fcf8fa",
+                        "tertiary-fixed": "#d3e4fe",
+                        "tertiary-container": "#0b1c30",
+                        "surface-dim": "#dcd9db",
+                        "surface-container-high": "#eae7e9",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "primary": "#000000",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#bec6e0",
+                        "background": "#fcf8fa",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "container-max": "1440px",
+                        "stack-lg": "24px",
+                        "sidebar-width": "280px",
+                        "stack-md": "16px",
+                        "margin-page": "40px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "mono-data": ["JetBrains Mono"],
+                        "display-lg": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "mono-data": ["14px", { "lineHeight": "1.5", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-lg": ["18px", { "lineHeight": "1.5", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom scrollbar for modal body */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #c6c6cd;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased overflow-hidden">
+<!-- BACKGROUND CANVAS (Blurred) -->
+<div class="relative w-full h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col bg-primary-container text-secondary-fixed fixed left-0 top-0 h-screen w-sidebar-width border-r border-outline-variant shadow-sm py-margin-page z-10">
+<div class="px-stack-lg mb-stack-lg">
+<div class="flex items-center gap-stack-sm mb-2">
+<span class="material-symbols-outlined text-secondary text-3xl icon-fill">account_balance_wallet</span>
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary">JajananKu</h1>
+</div>
+<p class="font-label-md text-label-md text-on-primary-container">Personal Finance</p>
+</div>
+<div class="flex-1 flex flex-col mt-stack-md">
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm border-l-4 border-secondary text-secondary-fixed bg-on-primary-fixed-variant/10 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined icon-fill">dashboard</span>
+<span class="font-body-md text-body-md font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary-container/70 hover:text-on-primary-container hover:bg-on-primary-fixed-variant/5 transition-colors border-l-4 border-transparent active:scale-95" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-body-md text-body-md">Income</span>
+</a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary-container/70 hover:text-on-primary-container hover:bg-on-primary-fixed-variant/5 transition-colors border-l-4 border-transparent active:scale-95" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-body-md text-body-md">Expense</span>
+</a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary-container/70 hover:text-on-primary-container hover:bg-on-primary-fixed-variant/5 transition-colors border-l-4 border-transparent active:scale-95" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-body-md text-body-md">Categories</span>
+</a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary-container/70 hover:text-on-primary-container hover:bg-on-primary-fixed-variant/5 transition-colors border-l-4 border-transparent active:scale-95" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-body-md text-body-md">Reports</span>
+</a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary-container/70 hover:text-on-primary-container hover:bg-on-primary-fixed-variant/5 transition-colors border-l-4 border-transparent active:scale-95" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-body-md text-body-md">Profile</span>
+</a>
+</div>
+<div class="px-stack-lg mt-auto">
+<button class="w-full py-3 bg-secondary text-on-secondary rounded-lg font-label-md text-label-md font-bold shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add</span>
+                    Add Transaction
+                </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 md:ml-sidebar-width flex flex-col bg-background">
+<!-- TopAppBar -->
+<header class="bg-surface text-primary fixed top-0 right-0 w-full md:w-[calc(100%-280px)] h-16 border-b border-outline-variant flex justify-between items-center px-stack-lg z-10">
+<div class="flex items-center">
+<!-- Search placeholder -->
+<div class="hidden md:flex items-center bg-surface-container-low rounded-full px-4 py-2 border border-outline-variant/50 focus-within:ring-2 focus-within:ring-secondary transition-all w-64">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full outline-none text-on-surface p-0" disabled="" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-all">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant ml-2">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young business person smiling gently, warm studio lighting, light gray background, high resolution, corporate modernism style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALpTo9ECb3Ve-VYWiUaZClcthJp3-ICcKV29vWyzvscj6ZdxBM2bwKKbc_wsCY0xPe4Cp-qv_A7lrn02XhPuO27gY90auVsFvL_hlxJcu3iDcJcNZYBDMiivdNN4gqVT4AO4HwpefKD8MfkV6CPVx2cz9zIibN4Jy0cNLEZHNmYoXK3IDxkHctplY4pTWqoJPqXlfLLB_Q5Iu6hOk-TbAmSLs21XPtcMQRyHQTR4XbfpgqXXfo0qJy3Q"/>
+</div>
+</div>
+</header>
+<!-- Dummy Dashboard Content (to be blurred) -->
+<main class="pt-24 px-stack-lg pb-margin-page grid grid-cols-1 md:grid-cols-3 gap-stack-lg max-w-container-max mx-auto w-full">
+<div class="col-span-1 md:col-span-3 mb-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Overview</h2>
+</div>
+<!-- Cards -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md shadow-sm h-32 flex flex-col justify-between">
+<span class="text-on-surface-variant font-body-md text-body-md">Total Balance</span>
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">Rp 12.500.000</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md shadow-sm h-32 flex flex-col justify-between">
+<span class="text-on-surface-variant font-body-md text-body-md">Monthly Income</span>
+<span class="font-headline-md text-headline-md font-semibold text-secondary">Rp 15.000.000</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md shadow-sm h-32 flex flex-col justify-between">
+<span class="text-on-surface-variant font-body-md text-body-md">Monthly Expense</span>
+<span class="font-headline-md text-headline-md font-semibold text-error">Rp 2.500.000</span>
+</div>
+<div class="col-span-1 md:col-span-2 bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md shadow-sm h-80">
+<h3 class="font-title-lg text-title-lg border-b border-outline-variant pb-3 mb-4">Recent Transactions</h3>
+<div class="space-y-4">
+<div class="h-12 bg-surface-container-low rounded animate-pulse"></div>
+<div class="h-12 bg-surface-container-low rounded animate-pulse"></div>
+<div class="h-12 bg-surface-container-low rounded animate-pulse"></div>
+</div>
+</div>
+<div class="col-span-1 bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md shadow-sm h-80">
+<h3 class="font-title-lg text-title-lg border-b border-outline-variant pb-3 mb-4">Expense Categories</h3>
+<div class="w-full h-48 bg-surface-container-low rounded-full mt-4 animate-pulse opacity-50"></div>
+</div>
+</main>
+</div>
+<!-- BLUR OVERLAY -->
+<div class="absolute inset-0 bg-surface/60 backdrop-blur-md z-40 transition-opacity duration-300"></div>
+</div>
+<!-- FOREGROUND: ADD TRANSACTION MODAL -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-stack-lg pointer-events-auto">
+<!-- Modal Card -->
+<div class="bg-surface-container-lowest w-full max-w-[520px] rounded-xl shadow-[0_12px_40px_rgb(0,0,0,0.15)] border border-outline-variant flex flex-col overflow-hidden transform scale-100 opacity-100 transition-all duration-300">
+<!-- Header -->
+<div class="flex justify-between items-center px-stack-lg py-stack-md border-b border-outline-variant bg-surface-container-lowest">
+<h2 class="font-title-lg text-title-lg text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">add_circle</span>
+                    Add Transaction
+                </h2>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low p-1.5 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-secondary/50">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Body (Scrollable if needed) -->
+<div class="p-stack-lg flex flex-col gap-stack-lg overflow-y-auto custom-scrollbar max-h-[calc(100vh-200px)] bg-surface-bright">
+<!-- Type Toggle (Segmented Control) -->
+<div class="flex bg-surface-container rounded-lg p-1 w-full border border-outline-variant/30">
+<button class="flex-1 py-2 text-center rounded-md text-on-surface-variant hover:text-on-surface font-label-md transition-all duration-200 focus:outline-none" type="button">
+                        Income
+                    </button>
+<button class="flex-1 py-2 text-center rounded-md bg-surface-container-lowest shadow-sm text-error font-label-md font-bold transition-all duration-200 focus:outline-none ring-1 ring-outline-variant/20" type="button">
+                        Expense
+                    </button>
+</div>
+<!-- Amount Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant" for="amount">Amount</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="text-on-surface-variant font-headline-md text-headline-md">Rp</span>
+</div>
+<input class="w-full bg-surface-container-low focus:bg-surface-container-lowest border border-outline-variant focus:border-secondary focus:ring-2 focus:ring-secondary/20 rounded-lg py-4 pl-14 pr-4 font-headline-md text-headline-md text-on-surface transition-all placeholder:text-outline-variant/50" id="amount" placeholder="0" type="text" value="250.000"/>
+</div>
+</div>
+<!-- Bento Grid for Details -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<!-- Category (with validation state example) -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant" for="category">Category</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low focus:bg-surface-container-lowest border border-error focus:ring-2 focus:ring-error/20 rounded-lg py-2.5 px-3 font-body-md text-body-md text-on-surface appearance-none transition-all cursor-pointer" id="category">
+<option disabled="" selected="" value="">Select category...</option>
+<option value="food">Food &amp; Beverage</option>
+<option value="transport">Transportation</option>
+<option value="utilities">Utilities</option>
+<option value="entertainment">Entertainment</option>
+</select>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</div>
+</div>
+<!-- Validation Message -->
+<p class="font-label-md text-[11px] text-error flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                            Category is required
+                        </p>
+</div>
+<!-- Date Picker -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant" for="date">Date</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low focus:bg-surface-container-lowest border border-outline-variant focus:border-secondary focus:ring-2 focus:ring-secondary/20 rounded-lg py-2.5 px-3 font-body-md text-body-md text-on-surface transition-all" id="date" type="date" value="2023-10-24"/>
+<!-- Native date pickers usually hide custom icons well, but adding an explicit one for styling cue if needed -->
+</div>
+</div>
+</div>
+<!-- Note/Description -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant" for="note">Note <span class="text-outline-variant font-normal">(Optional)</span></label>
+<textarea class="w-full bg-surface-container-low focus:bg-surface-container-lowest border border-outline-variant focus:border-secondary focus:ring-2 focus:ring-secondary/20 rounded-lg py-2.5 px-3 font-body-md text-body-md text-on-surface transition-all resize-none" id="note" placeholder="Add details about this transaction..." rows="3"></textarea>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="px-stack-lg py-stack-md border-t border-outline-variant bg-surface-container-lowest rounded-b-xl flex justify-end gap-stack-sm">
+<button class="px-6 py-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container-low font-label-md text-label-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-outline/50" type="button">
+                    Cancel
+                </button>
+<button class="px-6 py-2.5 rounded-lg bg-primary text-on-primary hover:bg-primary/90 font-label-md text-label-md font-medium transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-sm">save</span>
+                    Save Transaction
+                </button>
+</div>
+</div>
+</div>
+</body></html>
