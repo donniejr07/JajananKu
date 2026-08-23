@@ -1,5 +1,5 @@
 <header class="bg-surface border-b border-outline-variant fixed top-0 right-0 w-full md:w-[calc(100%-280px)] h-16 flex justify-between items-center px-stack-lg z-30">
-    <button class="md:hidden text-on-surface-variant p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+    <button @click="sidebarOpen = true" class="md:hidden text-on-surface-variant p-2 rounded-lg hover:bg-surface-container-low transition-colors">
         <span class="material-symbols-outlined">menu</span>
     </button>
 

@@ -12,14 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 
+    <link rel="icon" type="image/png" href="{{ asset('icon_jajananku.png') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-<body class="font-body-md text-body-md text-on-surface antialiased flex h-screen overflow-hidden">
+<body class="font-body-md text-body-md text-on-surface antialiased flex h-screen overflow-hidden" x-data="{ sidebarOpen: false }">
+
+    <div x-show="sidebarOpen" @click="sidebarOpen = false" class="fixed inset-0 bg-black/50 z-30 md:hidden" x-transition.opacity></div>
 
     <x-sidebar />
 
-    <main class="flex-1 flex flex-col md:ml-sidebar-width h-screen overflow-y-auto" x-data="{}">
+    <main class="flex-1 flex flex-col md:ml-sidebar-width h-screen overflow-y-auto">
         <x-topbar />
 
         <div class="mt-16 p-gutter max-w-container-max mx-auto w-full flex flex-col gap-stack-lg pb-margin-page">

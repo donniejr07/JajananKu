@@ -43,13 +43,31 @@
                     </div>
                 </div>
 
-                <div>
+                <div x-data="{ password: '' }">
                     <label class="block font-label-md text-label-md text-on-surface mb-2" for="password">Password</label>
                     <div class="relative">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <span class="material-symbols-outlined text-outline">lock</span>
                         </div>
-                        <input class="form-input" id="password" name="password" type="password" placeholder="••••••••" required autocomplete="new-password" />
+                        <input x-model="password" class="form-input" id="password" name="password" type="password" placeholder="••••••••" required autocomplete="new-password" />
+                    </div>
+                    <div class="mt-2 grid grid-cols-2 gap-2 text-xs">
+                        <span class="flex items-center gap-1 transition-colors" :class="password.length >= 8 ? 'text-secondary font-medium' : 'text-on-surface-variant/60'">
+                            <span class="material-symbols-outlined text-[16px]" x-text="password.length >= 8 ? 'check_circle' : 'cancel'"></span>
+                            Min. 8 karakter
+                        </span>
+                        <span class="flex items-center gap-1 transition-colors" :class="/[A-Z]/.test(password) && /[a-z]/.test(password) ? 'text-secondary font-medium' : 'text-on-surface-variant/60'">
+                            <span class="material-symbols-outlined text-[16px]" x-text="/[A-Z]/.test(password) && /[a-z]/.test(password) ? 'check_circle' : 'cancel'"></span>
+                            Huruf besar & kecil
+                        </span>
+                        <span class="flex items-center gap-1 transition-colors" :class="/[0-9]/.test(password) ? 'text-secondary font-medium' : 'text-on-surface-variant/60'">
+                            <span class="material-symbols-outlined text-[16px]" x-text="/[0-9]/.test(password) ? 'check_circle' : 'cancel'"></span>
+                            Minimal satu angka
+                        </span>
+                        <span class="flex items-center gap-1 transition-colors" :class="/[^A-Za-z0-9]/.test(password) ? 'text-secondary font-medium' : 'text-on-surface-variant/60'">
+                            <span class="material-symbols-outlined text-[16px]" x-text="/[^A-Za-z0-9]/.test(password) ? 'check_circle' : 'cancel'"></span>
+                            Minimal satu simbol
+                        </span>
                     </div>
                 </div>
 

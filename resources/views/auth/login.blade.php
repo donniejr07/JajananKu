@@ -3,7 +3,7 @@
 @section('title', 'Login - JajananKu')
 
 @section('content')
-    <div class="w-full max-w-[420px] bg-surface-container-lowest border border-outline-variant rounded-xl card-shadow p-stack-lg flex flex-col gap-stack-lg z-10 transition-shadow duration-300 hover:shadow-md hover:border-outline">
+    <div class="w-[90%] max-w-[360px] md:w-full md:max-w-[420px] bg-surface-container-lowest border border-outline-variant rounded-xl card-shadow p-stack-md md:p-stack-lg flex flex-col gap-stack-md md:gap-stack-lg z-10 transition-shadow duration-300 hover:shadow-md hover:border-outline">
         <div class="flex flex-col items-center justify-center text-center space-y-stack-sm pt-stack-sm">
             <h1 class="font-display-lg text-display-lg text-primary tracking-tight">JajananKu</h1>
             <p class="font-body-lg text-body-lg text-on-surface-variant">Secure access to your personal finances.</p>

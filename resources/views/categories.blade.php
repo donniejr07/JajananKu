@@ -10,12 +10,45 @@
         type: 'expense',
         icon: 'category',
         color: '#006c49',
+        iconOpen: false,
+        icons: [
+            {name: 'category', label: 'Default'},
+            {name: 'restaurant', label: 'Food'},
+            {name: 'shopping_cart', label: 'Shopping'},
+            {name: 'directions_car', label: 'Transport'},
+            {name: 'home', label: 'Housing'},
+            {name: 'local_hospital', label: 'Health'},
+            {name: 'school', label: 'Education'},
+            {name: 'movie', label: 'Entertainment'},
+            {name: 'flight', label: 'Travel'},
+            {name: 'checkroom', label: 'Clothing'},
+            {name: 'coffee', label: 'Coffee'},
+            {name: 'local_gas_station', label: 'Gas'},
+            {name: 'phone_android', label: 'Phone'},
+            {name: 'wifi', label: 'Internet'},
+            {name: 'bolt', label: 'Electric'},
+            {name: 'water_drop', label: 'Water'},
+            {name: 'fitness_center', label: 'Gym'},
+            {name: 'sports_esports', label: 'Gaming'},
+            {name: 'redeem', label: 'Gifts'},
+            {name: 'receipt_long', label: 'Bills'},
+            {name: 'payments', label: 'Salary'},
+            {name: 'account_balance', label: 'Bank'},
+            {name: 'work', label: 'Work'},
+            {name: 'trending_up', label: 'Invest'},
+            {name: 'savings', label: 'Savings'},
+            {name: 'store', label: 'Business'},
+            {name: 'laptop', label: 'Freelance'},
+            {name: 'pets', label: 'Pets'},
+            {name: 'star', label: 'Favorite'},
+            {name: 'more_horiz', label: 'Other'},
+        ],
         openNew() { this.reset(); this.show = true; },
         openEdit(c) {
             this.editingId = c.id; this.name = c.name; this.type = c.type;
             this.icon = c.icon; this.color = c.color; this.show = true;
         },
-        reset() { this.editingId = null; this.name = ''; this.type = 'expense'; this.icon = 'category'; this.color = '#006c49'; }
+        reset() { this.editingId = null; this.name = ''; this.type = 'expense'; this.icon = 'category'; this.color = '#006c49'; this.iconOpen = false; }
     }">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-stack-lg gap-stack-md">
             <div>
@@ -161,10 +194,27 @@
                         </select>
                     </div>
 
-                    <div class="flex flex-col gap-1">
-                        <label class="font-label-md text-label-md text-on-surface" for="icon">Icon (Material Symbol)</label>
-                        <input x-model="icon" id="icon" name="icon" type="text"
-                            class="form-input" placeholder="e.g. restaurant" />
+                    <div class="flex flex-col gap-1 relative">
+                        <label class="font-label-md text-label-md text-on-surface">Icon</label>
+                        <input type="hidden" name="icon" :value="icon">
+                        <button type="button" @click="iconOpen = !iconOpen"
+                            class="form-input flex items-center gap-2 text-left">
+                            <span class="material-symbols-outlined text-xl" x-text="icon"></span>
+                            <span class="font-body-md text-body-md text-on-surface" x-text="icons.find(i => i.name === icon)?.label || icon"></span>
+                            <span class="material-symbols-outlined text-on-surface-variant ml-auto text-[18px]">expand_more</span>
+                        </button>
+                        <div x-show="iconOpen" @click.outside="iconOpen = false" x-cloak
+                            class="absolute top-full left-0 right-0 mt-1 bg-surface-container-lowest border border-outline-variant rounded-lg shadow-lg z-20 max-h-48 overflow-y-auto p-2 grid grid-cols-5 gap-1">
+                            <template x-for="item in icons" :key="item.name">
+                                <button type="button"
+                                    @click="icon = item.name; iconOpen = false"
+                                    class="flex flex-col items-center gap-0.5 p-2 rounded-lg hover:bg-surface-container-low transition-colors"
+                                    :class="icon === item.name ? 'bg-secondary/10 text-secondary ring-1 ring-secondary' : 'text-on-surface-variant'">
+                                    <span class="material-symbols-outlined text-xl" x-text="item.name"></span>
+                                    <span class="text-[10px] truncate w-full text-center" x-text="item.label"></span>
+                                </button>
+                            </template>
+                        </div>
                     </div>
 
                     <div class="flex flex-col gap-1">

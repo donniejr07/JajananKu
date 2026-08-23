@@ -9,16 +9,19 @@
     ];
 @endphp
 
-<aside class="hidden md:flex bg-primary-container fixed left-0 top-0 h-screen w-sidebar-width border-r border-outline-variant shadow-sm z-40" x-data="{}">
+<aside class="bg-primary-container fixed left-0 top-0 h-screen w-sidebar-width border-r border-outline-variant shadow-sm z-40 transition-transform duration-300 md:translate-x-0 md:flex flex" :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'">
     <div class="flex flex-col h-full py-margin-page w-full">
-        <div class="px-stack-lg mb-stack-lg flex items-center gap-stack-md">
-            <div class="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
-                <span class="material-symbols-outlined text-on-secondary filled-icon">account_balance_wallet</span>
+        <div class="px-stack-lg mb-stack-lg flex items-center justify-between gap-stack-md">
+            <div class="flex items-center gap-stack-md">
+                <img src="{{ asset('icon_jajananku.png') }}" alt="JajananKu Logo" class="w-10 h-10 rounded-lg object-cover">
+                <div>
+                    <h1 class="font-headline-md text-headline-md font-bold text-on-primary tracking-tight">JajananKu</h1>
+                    <p class="font-label-md text-label-md text-on-primary-container">Personal Finance</p>
+                </div>
             </div>
-            <div>
-                <h1 class="font-headline-md text-headline-md font-bold text-on-primary tracking-tight">JajananKu</h1>
-                <p class="font-label-md text-label-md text-on-primary-container">Personal Finance</p>
-            </div>
+            <button @click="sidebarOpen = false" class="md:hidden text-on-primary-container hover:text-on-primary p-1">
+                <span class="material-symbols-outlined">close</span>
+            </button>
         </div>
 
         <nav class="flex-1 flex flex-col gap-stack-sm px-stack-md py-stack-md overflow-y-auto">
@@ -34,14 +37,5 @@
                 </a>
             @endforeach
         </nav>
-
-        <div class="px-stack-lg mt-auto">
-            <button
-                @click="Livewire.dispatch('open-transaction-form')"
-                class="w-full bg-secondary text-on-secondary font-body-md text-body-md py-stack-sm rounded-lg hover:brightness-90 transition-all flex items-center justify-center gap-stack-sm active:scale-95">
-                <span class="material-symbols-outlined text-sm">add</span>
-                Add Transaction
-            </button>
-        </div>
     </div>
 </aside>
