@@ -7,7 +7,6 @@ use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Http\Resources\CategoryResource;
 use App\Models\Category;
-use App\Services\ReportService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
@@ -17,8 +16,7 @@ class CategoryController extends Controller
 {
     public function index(Request $request): AnonymousResourceCollection
     {
-        $cached = Cache::tags([ReportService::CATEGORY_TAG, "user:{$request->user()->id}"])
-            ->remember("categories:{$request->user()->id}", now()->addHour(), function () use ($request) {
+        $cached = Cache::remember("categories:{$request->user()->id}", now()->addHour(), function () use ($request) {
                 return $request->user()->categories()->orderBy('type')->orderBy('name')->get()->toArray();
             });
 

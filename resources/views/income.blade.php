@@ -8,7 +8,7 @@
             <h3 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Income</h3>
             <p class="font-body-md text-body-md text-on-surface-variant mt-1">Track and manage your revenue streams.</p>
         </div>
-        <button @click="Livewire.dispatch('open-transaction-form', { type: 'income' })"
+        <button @click="$dispatch('open-transaction-form', { type: 'income' })"
             class="bg-primary text-on-primary font-body-md text-body-md py-2.5 px-5 rounded-lg shadow-sm hover:bg-on-primary-fixed-variant transition-all flex items-center gap-2 active:scale-95">
             <span class="material-symbols-outlined text-sm">add</span>
             Add Income

@@ -36,7 +36,7 @@
                         </td>
                         <td class="px-stack-md py-stack-sm">
                             <div class="flex gap-1 justify-end opacity-0 group-hover:opacity-100 hover:opacity-100 transition-opacity">
-                                <button @click="Livewire.dispatch('open-transaction-form', { id: {{ $transaction->id }} })"
+                                <button @click="$dispatch('open-transaction-form', { id: {{ $transaction->id }} })"
                                     class="text-on-surface-variant hover:text-secondary p-1" title="Edit">
                                     <span class="material-symbols-outlined text-[18px]">edit</span>
                                 </button>

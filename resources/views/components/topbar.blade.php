@@ -1,7 +1,7 @@
 <header class="bg-surface border-b border-outline-variant fixed top-0 right-0 w-full md:w-[calc(100%-280px)] h-16 flex justify-between items-center px-stack-lg z-30">
-    <button @click="sidebarOpen = true" class="md:hidden text-on-surface-variant p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+    <label for="sidebar-toggle" class="md:hidden text-on-surface-variant p-2 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
         <span class="material-symbols-outlined">menu</span>
-    </button>
+    </label>
 
     <div class="relative w-full max-w-md hidden sm:block">
         <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/50 text-xl">search</span>

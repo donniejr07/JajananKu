@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
-use App\Services\ReportService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
@@ -15,8 +14,7 @@ class CategoryController extends Controller
 {
     public function index(Request $request): View
     {
-        $cached = Cache::tags([ReportService::CATEGORY_TAG, "user:{$request->user()->id}"])
-            ->remember("categories:{$request->user()->id}", now()->addHour(), function () use ($request) {
+        $cached = Cache::remember("categories:{$request->user()->id}", now()->addHour(), function () use ($request) {
                 return $request->user()->categories()
                     ->withCount('transactions')
                     ->withSum('transactions as transactions_sum', 'amount')

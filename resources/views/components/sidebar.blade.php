@@ -9,7 +9,7 @@
     ];
 @endphp
 
-<aside class="bg-primary-container fixed left-0 top-0 h-screen w-sidebar-width border-r border-outline-variant shadow-sm z-40 transition-transform duration-300 md:translate-x-0 md:flex flex" :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'">
+<aside class="sidebar-aside bg-primary-container fixed left-0 top-0 h-screen w-sidebar-width border-r border-outline-variant shadow-sm z-40 transition-transform duration-300 flex">
     <div class="flex flex-col h-full py-margin-page w-full">
         <div class="px-stack-lg mb-stack-lg flex items-center justify-between gap-stack-md">
             <div class="flex items-center gap-stack-md">
@@ -19,15 +19,16 @@
                     <p class="font-label-md text-label-md text-on-primary-container">Personal Finance</p>
                 </div>
             </div>
-            <button @click="sidebarOpen = false" class="md:hidden text-on-primary-container hover:text-on-primary p-1">
+            <label for="sidebar-toggle" class="md:hidden text-on-primary-container hover:text-on-primary p-1 cursor-pointer">
                 <span class="material-symbols-outlined">close</span>
-            </button>
+            </label>
         </div>
 
         <nav class="flex-1 flex flex-col gap-stack-sm px-stack-md py-stack-md overflow-y-auto">
             @foreach ($nav as $item)
                 @php $active = request()->routeIs($item['route']); @endphp
                 <a href="{{ route($item['route']) }}"
+                   onclick="document.getElementById('sidebar-toggle').checked = false"
                    class="flex items-center gap-stack-md px-stack-md py-stack-sm rounded-r-lg transition-all active:scale-95
                           {{ $active
                               ? 'border-l-4 border-secondary text-secondary-fixed bg-on-primary-fixed-variant/10'

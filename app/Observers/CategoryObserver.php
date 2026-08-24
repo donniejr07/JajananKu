@@ -3,7 +3,6 @@
 namespace App\Observers;
 
 use App\Models\Category;
-use App\Services\ReportService;
 use Illuminate\Support\Facades\Cache;
 
 class CategoryObserver
@@ -20,6 +19,6 @@ class CategoryObserver
 
     protected function invalidate(Category $category): void
     {
-        Cache::tags([ReportService::CATEGORY_TAG, "user:{$category->user_id}"])->flush();
+        Cache::forget("categories:{$category->user_id}");
     }
 }

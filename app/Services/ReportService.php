@@ -19,7 +19,7 @@ class ReportService
         $key = "summary:{$user->id}:{$month->format('Y-m')}";
         $tags = [self::SUMMARY_TAG, "user:{$user->id}"];
 
-        return Cache::tags($tags)->remember($key, now()->addHour(), function () use ($user, $month) {
+        return Cache::remember($key, now()->addHour(), function () use ($user, $month) {
             $start = $month->copy()->startOfMonth();
             $end = $month->copy()->endOfMonth();
 
@@ -127,6 +127,6 @@ class ReportService
 
     public static function flushSummary(User $user): void
     {
-        Cache::tags([self::SUMMARY_TAG, "user:{$user->id}"])->flush();
+        Cache::forget("summary:{$user->id}:" . now()->format('Y-m'));
     }
 }

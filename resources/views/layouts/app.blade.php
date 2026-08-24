@@ -14,11 +14,24 @@
 
     <link rel="icon" type="image/png" href="{{ asset('icon_jajananku.png') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <style>
+        [x-cloak] { display: none !important; }
+        #sidebar-toggle { display: none; }
+        #sidebar-toggle:checked ~ .sidebar-overlay { display: block; }
+        #sidebar-toggle:checked ~ .sidebar-aside { transform: translateX(0); pointer-events: auto; }
+        .sidebar-overlay { display: none; }
+        .sidebar-aside { transform: translateX(-100%); pointer-events: none; }
+        @media (min-width: 768px) {
+            .sidebar-overlay { display: none !important; }
+            .sidebar-aside { transform: translateX(0) !important; pointer-events: auto !important; }
+        }
+    </style>
     @livewireStyles
 </head>
-<body class="font-body-md text-body-md text-on-surface antialiased flex h-screen overflow-hidden" x-data="{ sidebarOpen: false }">
+<body class="font-body-md text-body-md text-on-surface antialiased flex h-screen overflow-hidden" x-data="{}">
 
-    <div x-show="sidebarOpen" @click="sidebarOpen = false" class="fixed inset-0 bg-black/50 z-30 md:hidden" x-transition.opacity></div>
+    <input type="checkbox" id="sidebar-toggle">
+    <label for="sidebar-toggle" class="sidebar-overlay fixed inset-0 bg-black/50 z-30 md:hidden cursor-default"></label>
 
     <x-sidebar />
 

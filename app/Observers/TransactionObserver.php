@@ -25,6 +25,6 @@ class TransactionObserver
     protected function invalidate(Transaction $transaction): void
     {
         ReportService::flushSummary($transaction->user);
-        \Illuminate\Support\Facades\Cache::tags([ReportService::CATEGORY_TAG, "user:{$transaction->user_id}"])->flush();
+        \Illuminate\Support\Facades\Cache::forget("categories:{$transaction->user_id}");
     }
 }
